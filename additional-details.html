@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Mozambique | Proffesional Details</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="../mozambique/assets/css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+</head>
+
+<body>
+	<div class="bg-grey">
+		<div class="login-block forgot-password prof-details">
+			<img src="../mozambique/media/Leaves-blue.png" />
+			<div class="text-block">
+				<h4 class="">Additional details</h4>
+			</div>
+			<div class="fields">
+				<form class="text-center" method="POST" action="additional-details.php" id="frmadddetails">
+					<input type="text" value="" placeholder="Source water" id="source_water" name="source_water" />
+					<input type="text" value="" placeholder="Irrigation system" id="irrigation_system"
+						name="irrigation_system" />
+					<input type="number" value="" placeholder="Fulltime male" id="fulltime_male" name="fulltime_male" />
+					<input type="number" value="" placeholder="Fulltime female" id="fulltime_female"
+						name="fulltime_female" />
+					<input type="number" value="" placeholder="Contract male" id="contract_male" name="contract_male" />
+					<input type="number" value="" placeholder="Contract female" id="contract_female"
+						name="contract_female" />
+					<input type="number" value="" placeholder="Seasonal male" id="seasonal_male" name="seasonal_male" />
+					<input type="number" value="" placeholder="Seasonal female" id="seasonal_female"
+						name="seasonal_female" />
+					<input type="number" value="" placeholder="Labour males" id="labour_male" name="labour_male" />
+					<input type="number" value="" placeholder="Labour female" id="labour_female" name="labour_female" />
+					<input type="number" value="" placeholder="Seasonal item" id="seasonal_item" name="seasonal_item" />
+					<input type="date" value="" placeholder="Showing date" id="showing_date" name="showing_date" />
+					<input type="text" value="" placeholder="Report dieases" id="report_dieases"
+						name="report_dieases" />
+					<input type="text" value="" placeholder="challenges" id="challenges" name="challenges" />
+					<input type="text" value="" placeholder="pest" id="pest" name="pest" />
+					<input type="text" value="" placeholder="sanitation" id="sanitation" name="sanitation" />
+					<button type="submit" class="btn btn-link mt10">Submit</button>
+					<a class="inline-block align-top resend text-center mt10" href="" id="skip">Skip</a>
+					<!-- <a class="btn btn-link mt10" href="house-hold-details.html">Submit</a>	 -->
+
+				</form>
+			</div>
+		</div>
+
+	</div>
+</body>
+<script>
+	$(document).ready(function () {
+		$('#skip').click(function (e) {
+			e.preventDefault();
+
+			$('#frmadddetails').submit();
+		});
+		$("#frmadddetails").validate({
+
+			rules: {
+				trainningdetails: {
+					required: true
+				},
+				professionaldetails: {
+					required: true
+				},
+				farmeraddress: {
+					required: true
+				},
+				totalarea: {
+					required: true
+				},
+				plantedarea: {
+					required: true
+				},
+				numberoftrees: {
+					required: true
+				},
+
+			},
+			messages: {
+				trainningdetails: {
+					required: "Training details are required."
+				},
+				professionaldetails: {
+					required: "Professional details are required."
+				},
+				farmeraddress: {
+					required: "Farmer address is required."
+				},
+				totalarea: {
+					required: "Total area is required."
+				},
+				plantedarea: {
+					required: "Planted area is required."
+				},
+				numberoftrees: {
+					required: "Number of trees are required."
+				}
+			},
+			errorPlacement: function (error, element) {
+				error.insertAfter(element);
+			},
+
+		});
+	});
+</script>
+
+</html>

@@ -1,0 +1,50 @@
+
+.info{
+	color: $black;
+	text-decoration: none !important;
+	display: block;
+	img{
+			width:20px;
+	}
+	span{
+			padding-left: 15px;
+	}
+}
+.panel-heading {
+  padding: 0;
+	border:0;
+	.panel-title{
+		span{
+			padding: 5px 10px;
+			margin-bottom:5px;
+
+		}
+	}
+}
+.panel-title>a, .panel-title>a:active{
+	display:block;
+	padding:10px;
+  color:#555;
+  font-size:16px;
+  font-weight:bold;
+	text-transform:uppercase;
+	letter-spacing:1px;
+  word-spacing:3px;
+	text-decoration:none;
+}
+.panel-heading  a:before {
+   font-family: 'Glyphicons Halflings';
+   content: "\e114";
+   float: right;
+   transition: all 0.5s;
+}
+.panel-heading.active a:before {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+} 
+
+.title-mngnt{
+color: $theme-color;
+    font-weight: 600;
+    margin-bottom:30px;}

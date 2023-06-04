@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Mozambique | OTP</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="../mozambique/assets/css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js">
+		</script>
+</head>
+
+<body>
+	<div class="bg-grey">
+		<div class="login-block forgot-password">
+			<div class="text-block">
+				<h4 class="">Enter OTP</h4>
+				<span class="mt10"></span>
+			</div>
+			<div class="fields">
+				<form class="text-center" method="POST" action="enter-otp.php" id="frmotp">
+					<input type="number" value="" placeholder="Enter Code" id="otp" class="mb10" name="otp">
+					<p class="validation"></p>
+					<!-- <p class="validation">Invalid Email</p> -->
+					<a class="inline-block align-top resend" href="" id="resend">Resend Code</a>
+					<div class="fix-text mt10">
+						<button type="submit" class="inline-block align-top link"
+							href="professional-details.html">Verify</button>
+
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	$(document).ready(function () {
+
+		$('#resend').click(function (e) {
+			debugger;
+			$('.validation').html(cookieValue);
+			removeCookie("message");
+			//$('#frmotp').submit();
+			var mob = getCookie("mobilenumber");
+			$.ajax({
+				//	url: 'https://mozambique.hyunixsolutions.com/cfbadmin/Api/sendotp',
+				url: 'http://localhost/mozambique/login.php',
+				method: 'POST',
+				dataType: 'json',
+				data: {
+					mobilenumber: "9904188487"
+				},
+				success: function (response) {
+					debugger;
+					alert("s");
+					// Process the API response
+					console.log(response);
+				},
+				error: function (xhr, status, error) {
+					alert("e");
+					// Handle any errors
+					console.error(error);
+				}
+			});
+		});
+
+
+		var cookieValue = getCookie("message").replace(/%20/g, " ");
+		$('.validation').html(cookieValue);
+		$.removeCookie("message");
+
+
+		$("#otp").on("keypress", function () {
+			$('.validation').html(" ");
+			$.removeCookie("message");
+		});
+
+		function getCookie(cname) {
+			let name = cname + "=";
+			let ca = document.cookie.split(';');
+			for (let i = 0; i < ca.length; i++) {
+				let c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+		function removeCookie(cookieName) {
+			document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+		}
+
+		$("#frmotp").validate({
+
+			rules: {
+				otp: {
+					required: true
+				}
+			},
+			messages: {
+				otp: {
+					required: "OTP is required."
+				}
+			},
+			errorPlacement: function (error, element) {
+				error.insertAfter(element);
+			},
+
+		});
+	});
+</script>
+
+</html>

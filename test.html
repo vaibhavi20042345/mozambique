@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
+</head>
+<body>
+    <form id="myForm">
+        <div>
+          <!-- <label for="name">Name:</label> -->
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" minlength="6" required>
+        </div>
+        <div>
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+      
+</body>
+<script>
+    $(document).ready(function() {
+      $('#myForm').validate({
+        rules: {
+          name: 'required',
+          email: {
+            required: true,
+            email: true
+          },
+          password: {
+            required: true,
+            minlength: 6
+          }
+        },
+        messages: {
+          name: 'Please enter your name.',
+          email: {
+            required: 'Please enter your email address.',
+            email: 'Please enter a valid email address.'
+          },
+          password: {
+            required: 'Please enter a password.',
+            minlength: 'Password must be at least 6 characters long.'
+          }
+        }
+      });
+    });
+  </script>
+  
+</html>

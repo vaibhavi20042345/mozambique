@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Welcome to Mozambique</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body class="has-bg overflow-initial">
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="../media/logo-panel.png"> 
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav">
+       <li><a href="home.html">Framers</a></li>
+      <li class="active"><a href="analytics-dashoard.html">Analytics</a></li>       
+    </ul>
+</div>
+    <div class="pull-right profile">
+      <img src="../media/pic.png" class="hide-show">
+      <div class="bg-white">
+        <div class="has-border">
+          <img src="../media/pic.png" />
+          <span>Farmer's Name</span>
+        </div>
+        <div class="has-details">
+          <ul>
+            <li><a href="organization-profile.html">View Profile</a></li>
+            <li><a>Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  
+  
+
+ <div class="title-wrapper">
+ 	<div class="container">
+	 	<div class="title inline-block align-middle">
+	 		<h4>Farmer demographics</h4>
+	 	</div>
+ 	</div>
+ </div>
+
+<div class="container dropdown">
+  <div class="row clearfix">
+    <div class="col-sm-6">
+      <select id="Crop" class="inline-block align-middle">
+        <option value="Select crop">Select crop</option>
+        <option value="C1">C1</option>
+        <option value="C2">C2</option>
+        <option value="C3">C3</option>
+      </select>
+      <select id="Time" class="inline-block align-middle">
+        <option value="Select Time period">Select Time period</option>
+        <option value="T1">T1</option>
+        <option value="T2">T2</option>
+        <option value="T3">T3</option>
+      </select>
+
+      <div class="container farmer-list">
+             
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Sr No</th>
+                <th>City </th>
+                <th>Acres</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Catadica</td>
+                <td>5243</td>
+              </tr>
+               <tr>
+                <td>1</td>
+                <td>Catadica</td>
+                <td>5243</td>
+              </tr>
+               <tr>
+                <td>1</td>
+                <td>Catadica</td>
+                <td>5243</td>
+              </tr>
+               <tr>
+                <td>1</td>
+                <td>Catadica</td>
+                <td>5243</td>
+              </tr>
+               <tr>
+                <td>1</td>
+                <td>Catadica</td>
+                <td>5243</td>
+              </tr>
+               <tr>
+                <td>1</td>
+                <td>Catadica</td>
+                <td>5243</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+
+    </div>
+  </div>
+    <div class="col-sm-6">
+
+      <div class="">
+        <img src="../media/g1.png">
+      </div>
+       <div class="">
+        <img src="../media/g2.png">
+      </div>
+    </div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+  $(".bg-white").hide();
+ 
+  $(".hide-show").click(function(){
+    $(".bg-white").toggle();
+  });
+ 
+});
+</script>
+</body>
+</html>

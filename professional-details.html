@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mozambique | Proffesional Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="../mozambique/assets/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+</head>
+<body>
+<div class="bg-grey">
+	<div class="login-block forgot-password prof-details">
+		<img src="../mozambique/media/Leaves-blue.png" />
+		<div class="text-block">
+			<h4 class="">Professional details</h4>			
+		</div>
+		<div class="fields">
+			<form class="text-center"  method="POST" action="professional-details.php" id="frmdetails">   
+       		 <input type="text" value="" placeholder="Training details" id="Training details" name="trainningdetails" />
+		    <input type="text" value="" placeholder="Professional details" id="Professional details" name="professionaldetails"/>
+		    <input type="text" value="" placeholder="Farmer's address" id="Farmer address"  name="farmeraddress"/>
+		   	<input type="number"  step="0.0001" value="" placeholder="Total area" id="Total area" name="totalarea"/>
+		    <input type="number" step="0.0001" value="" placeholder="Planted area" id="Planted area" name="plantedarea" />
+		    <input type="number" value="" placeholder="Number of trees" id="Number of trees" name="numberoftrees" />
+			<button type="submit" class="btn btn-link mt10">Submit</button>
+       		<!-- <a class="btn btn-link mt10" href="house-hold-details.html">Submit</a>	 -->
+	       		
+	       	</form>	
+		</div>
+	</div>
+
+</div>
+</body>
+<script>
+	$(document).ready(function(){
+		$("#frmdetails").validate({
+			
+			rules: {
+				trainningdetails: {
+				required: true
+			  },
+			  professionaldetails: {
+				required: true
+			  },
+			  farmeraddress: {
+				required: true
+			  },
+			  totalarea: {
+				required: true
+			  },
+			  plantedarea: {
+				required: true
+			  },
+			  numberoftrees: {
+				required: true
+			  },
+
+			},
+			messages: {
+				trainningdetails: {
+				required: "Training details are required."
+			  },
+			  professionaldetails: {
+				required: "Professional details are required."
+			  },
+			  farmeraddress: {
+				required: "Farmer address is required."
+			  },
+			  totalarea: {
+				required: "Total area is required."
+			  },
+			  plantedarea: {
+				required: "Planted area is required."
+			  },
+			  numberoftrees: {
+				required: "Number of trees are required."
+			  }
+			},
+			errorPlacement: function(error, element) {
+		error.insertAfter(element); 
+	  },
+	 
+		});
+	 });
+	 </script>
+</html>

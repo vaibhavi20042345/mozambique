@@ -1,0 +1,270 @@
+.bg-img {
+    background: url('../../media/bg-img.png') no-repeat fixed center center;
+    background-size: cover;
+    font-family: Montserrat;
+    height: 100vh;
+     @include flexstyle(flex, center, center);
+     @include flex-direction(column);
+     &.has-hidden{
+     	overflow: hidden;
+     }
+     
+}
+
+
+.login-block {
+    width: 1040px;   
+    background: #0000006b;
+    border-radius: 5px;
+    margin: 0 auto;
+    font-size: 0;
+    max-height: 90vh;
+    .left-panel{
+    	padding: 20px;    	
+    	height: calc(100vh - 22%);
+    	position: relative;
+	    h4, span{ font-size: 25px;}
+	    h4{
+	    	font-weight: 700;
+	    	color: $white;
+	    	margin-bottom: 20px;
+	    }
+	    span{
+	    	font-weight: 400;
+	    	color: $white;
+	    }
+	    p{
+	    	font-weight: 400;
+	    	color: $white;
+	    	font-size: 20px;
+	    	position: absolute;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    max-width: 80%;
+		    margin: 0 auto;
+	    }
+    	img{
+    		max-height: 60px;
+    		margin-bottom: 30px;
+    	}
+
+    }
+    .right-panel{
+    	 padding: 20px 40px;
+    	 background: $white;
+    	position: relative;
+
+    	p,a{
+    		font-size: 14px;
+    		position: sticky;
+    		bottom: 0;
+    	}
+    	a{
+    		color: $theme-color;
+    		cursor: pointer;
+    	}
+    }
+    /* for login page */
+    &.has-height{
+    	height: 90vh;
+    	.right-panel{
+    		height: 100%;
+    		form{
+    			position: absolute;
+			    right: 0;
+			    left: 0;
+			    top: 0;
+			    bottom: 0;
+			   	@include flexstyle(flex, center, center);
+     			@include flex-direction(column);
+			    max-width: 80%;
+			    margin: 0 auto;
+			    .validation{
+			    	position: relative;
+    				right: -160px;
+    				&.has-blue{
+    					color: $theme-color !important;
+    				}
+			    }
+    		}
+		    button{
+		    	padding: 10px 20px;
+		    	max-width: 100%;
+		    }
+    		
+    	}
+    }
+}
+
+.login-block h1 {
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.login-block{
+	position: relative;
+		textarea {
+		    resize: none;
+		}
+	 input,textarea {
+	    width: 100%;
+	    height: 42px;
+	    box-sizing: border-box;
+	    border-radius: 0;
+	    border: 0;
+	    border-bottom: 1px solid #ccc;
+	    margin-bottom: 10px;
+	    font-size: 14px;
+	    font-family: Montserrat;
+	    padding: 5px;
+	    outline: none;
+	    &::-webkit-input-placeholder { /* Edge */
+		  font-weight: lighter;
+		}
+
+		&::-ms-input-placeholder { /* Internet Explorer */
+		 font-weight: lighter;
+		}
+
+		&::placeholder {
+		  font-weight: lighter;
+		}
+	}
+	.arrow{
+		position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    right: 0;
+	    left: 0;
+	    margin: 0 auto;
+	    text-align: center;
+	    height: 100%;
+	     @include flexstyle(flex, center, center);
+	     img{
+	     	max-height: 70px;
+	     	z-index: 9;
+	     }
+	}
+
+}
+
+.login-block select{
+	border: 0;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+    
+    margin-bottom: 10px;
+    color: #bfb7b7;
+    width: 100%;
+    height: 42px;
+    padding: 5px;
+}
+
+.login-block input:active, .login-block input:focus {
+	border:0;
+    border-bottom: 1px solid #ff656c;
+    padding: 5px;
+}
+
+.login-block button {
+    width: 100%;
+    height: 40px;
+    background: $theme-color;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid $theme-color;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: Montserrat;
+    outline: none;
+    cursor: pointer;
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.login-block button:hover {
+    background: $theme-color;
+}
+
+.fix-btn{
+	position: sticky;
+    bottom: 20px;
+}
+.fix-text{
+	position: sticky;
+    bottom: 0;
+}
+.validation{
+	color: red;
+	text-align: right;
+	font-size: 10px;
+}
+
+@media only screen and (max-width: 1040px) {
+	.bg-img{
+		height: auto;
+	}
+	.login-block{
+		width: auto;
+		max-width: 80%;
+		height: auto;
+		max-height: inherit;
+		.arrow{display: none;}
+		.inline-block{
+			display: block;
+			margin:0 auto;
+		}
+		.w50{
+			width: 70%;
+		}
+		.left-panel{
+			p{
+				position: relative;
+				margin-top: 10px;
+			}
+		}
+		.right-panel{
+			border-radius: 5px;
+		}
+		/* login  */
+		&.has-height{
+			height: 100vh;
+			.left-panel{
+				height: auto;
+				p{
+					max-width: 100%;
+				}
+			}
+			.right-panel{
+				height: auto;
+				form{
+					position: relative;
+					display: block;
+					.validation{
+						right:0;
+					}
+				}
+			}
+		}
+	}
+	.fix-btn, .fix-txt{
+		display: block;
+
+	}
+}
+@media only screen and (max-width: 520px) {
+	.login-block{
+		
+		max-width: 100%;
+		.w50{
+			width: 90%;
+		}
+	}
+}

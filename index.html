@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Mozambique | Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="../mozambique/assets/css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js">
+		</script>
+	<style>
+		.error {
+			color: red;
+		}
+
+		.error-message {
+			display: block;
+			font-size: 12px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="bg-img has-hidden">
+
+		<div class="login-block has-height">
+			<div class="arrow">
+				<img src="../mozambique/media/Leaves-blue.png">
+			</div>
+			<div class="left-panel inline-block align-top w50 text-center">
+				<div>
+					<img src="../mozambique/media/leaves.png">
+				</div>
+				<div class="text-block">
+					<h4>Login</h4>
+					<span>Welcome to Mozambique</span>
+				</div>
+				<p>From the farm to your table, connecting you with nature's bounty. </p>
+			</div>
+			<div class="right-panel inline-block align-top w50">
+				<form class="text-center" method="POST" action="login.php" id="loginfrm">
+
+					<input type="number" value="" placeholder="Mobile Number" id="mobilenumber" name="mobilenumber"
+						required />
+					<p class="validation"></p>
+					<!-- <label for="mobilenumber" style="display: block !important;">Mobile Number is required.</label> -->
+
+
+					<div class="fix-btn mt10">
+						<button type="submit" class="btn btn-link" id="btnclick">Send OTP</button>
+						<!-- <a class="btn btn-link" href="enter-otp.html">Send OTP</a>	 -->
+					</div>
+					<div class="fix-text mt10">
+						<p class="inline-block align-top mr10">Don't have an account? </p>
+						<a class="inline-block align-top" href="register.php">Register</a>
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script>
+	$(document).ready(function () {
+
+		var cookieValue = getCookie("message").replace(/%20/g, " ");
+		$('.validation').html(cookieValue);
+		$.removeCookie("message");
+
+		$("#btnclick").on("click", function () {
+			if ($("#mobilenumber").val().length == 0) {
+
+				$('.validation').html("Mobile Number is required");
+			}
+		});
+
+		$("#mobilenumber").on("keypress", function () {
+			$('.validation').html(" ");
+			$.removeCookie("message");
+		});
+
+	});
+
+	function getCookie(cname) {
+		let name = cname + "=";
+		let ca = document.cookie.split(';');
+		for (let i = 0; i < ca.length; i++) {
+			let c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
+	function removeCookie(cookieName) {
+		document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+	}
+
+</script>
+
+</html>

@@ -1,0 +1,71 @@
+.bg-grey{
+	background: $bg-color;
+    height: 100vh;
+    @include flexstyle(flex, center, center);
+     .forgot-password{
+     	background: #fff;
+    	width: 500px;
+    	border-radius: 5px;
+    	text-align: center;
+    	padding: 90px 50px;
+        &.prof-details{
+            padding: 30px;
+            max-height: 100vh;
+                .text-block{
+                    h4{
+                    margin-bottom: 20px;
+                    }
+                }
+                img{
+                    max-height:100px;
+                }
+            }
+        &.hous-details{
+            max-height: 100vh;
+            .resend{
+                text-align:center;
+            }
+        }
+     }
+     .text-block{
+     	h4{
+     		font-size: 24px;
+     		color: $theme-color;
+     		margin-bottom: 30px;
+     		font-weight: 600;
+     	}
+     	span{
+     		font-size: 14px;
+     		color: $black;
+     		line-height: 20px;
+     		margin-bottom: 30px;
+     		display: inline-block;
+     	}
+     }
+     button{
+     	margin-top:20px;
+     	display: inline-block;
+     }
+     .fix-text{
+     	position: relative;
+     	font-size: 14px;
+     }
+     .mb10{margin-bottom: 10px;}
+     .mt10{margin-top: 10px;}
+
+     .fields{
+     	.validation{
+     		text-align: left;
+    		font-size: 12px;
+     	}
+     }
+}
+
+/* resend  */
+.resend{
+	    font-size: 13px;
+    text-align: right;
+    color: #8d7f7f;
+    text-decoration: underline;
+    display: block;
+}

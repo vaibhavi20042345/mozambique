@@ -1,0 +1,107 @@
+
+//theme button style
+.btn-theme {
+          font-size: 12px;
+          color: $white;
+          background:$theme-color;
+          text-align: center;
+          z-index: 2;
+          padding: 7px 15px;
+          cursor:pointer;
+          font-family: $title-font;
+          z-index: 999;
+          position: relative;
+          cursor: pointer;
+          margin-right:10px;
+          border: 1px solid $theme-color;
+          @include transition(0.2s ease-out);
+          line-height: normal;
+          text-transform: uppercase;
+          border-radius: 5px;
+            &.btn-dark {
+            background-image:linear-gradient(90deg,$dark-theme-color, $dark-theme-color);
+          } 
+          &.btn-dark-subscribe{
+            background: #0a1d3b;
+          }
+          &:hover {           
+            @include transition(0.2s ease-in);
+           background:$white;
+           color: $black;
+            &.btn-dark {
+              background-image:linear-gradient(90deg,lighten(#054077,10%),lighten(#054077,10%));
+              border: 2px solid $theme-color;
+            }
+          }
+        
+}
+.btn-outline {
+          font-size: 12px;
+          color: $white;
+          background:transparent;
+          border:1px solid $white;
+          text-align: center;
+          z-index: 2;
+          padding:5px 10px;
+          cursor:pointer;         
+          z-index: 999;
+          line-height: normal;
+          text-transform: uppercase;
+          @include transition(0.3s ease-out);
+          &:hover {
+            background:$dark-theme-color;
+            border-color:$dark-theme-color;
+            @include transition(0.3s ease-in);
+          }
+}
+
+.btn-primary{
+    background-color: #fff !important;
+    border: 1px solid #ddd !important;
+        color: #000 !important;
+}
+
+.btn{
+    &.btn-link{
+        background: $theme-color;
+        color: $white !important;
+        font-weight: 600 !important;
+        border-radius: 5px;
+        padding: 10px 20px;
+        width:220px;
+        height: 40px;
+            text-transform: uppercase;
+    font-size: 14px;
+    font-family: Montserrat;
+        &:hover{
+             background: $theme-color;
+            color: $white !important;
+            font-weight: 600 !important;
+            border-radius: 5px;
+        }
+    }
+}
+
+// button responsive style
+@media(min-width:768px) {
+    // button style starts
+     .btn-theme,.btn-outline  {
+        padding:7px 12px;
+        font-size: 13px;
+     } 
+}
+@media(min-width:1200px) {
+   // button style starts
+       // button style starts
+     .btn-theme,.btn-outline  {
+        padding:10px 15px;
+        font-size: 14px;
+     } 
+}
+@media(min-width:1600px) {
+   // button style starts
+     .btn-theme,.btn-outline  {
+        padding:15px 20px;
+        //font-size: 16px;
+     } 
+}
